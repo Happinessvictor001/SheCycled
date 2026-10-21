@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SheCycled</title>
+<meta name="description" content="Climate education and agro-waste sanitary pads for women and girls in northern Nigeria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1f4d3a; --leaf:#5fa84a; --mint:#eef5ef; --ink:#17231d; --muted:#55645b; --line:#d8e3da; --white:#fff;
+  --radius:14px; --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.2;color:var(--green)}
+h1{font-size:clamp(2rem,5vw,3.4rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.4rem)}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:12px 22px;border-radius:999px;font-weight:600;border:0;cursor:pointer}
+.btn:hover{background:#163a2b}
+.btn.light{background:#fff;color:var(--green)}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-weight:700;font-size:1.3rem;color:var(--green)}
+.menu{display:flex;align-items:center;gap:28px;list-style:none}
+.menu a:not(.btn):hover{color:var(--leaf)}
+.burger{display:none;background:none;border:0;font-size:1.8rem;color:var(--green);cursor:pointer}
+
+/* Hero */
+.hero{background:var(--mint);padding:96px 0 72px;text-align:center}
+.hero p.lead{max-width:680px;margin:20px auto 0;color:var(--muted);font-size:1.1rem}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;text-align:left}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.pillar .icon{width:48px;height:48px;border-radius:12px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:1.4rem;margin-bottom:16px}
+.pillar h3{font-size:1.2rem;margin-bottom:8px}
+.pillar p{color:var(--muted);font-size:.95rem}
+
+/* Partners */
+.partners{padding:40px 0;border-bottom:1px solid var(--line);overflow:hidden}
+.partners small{display:block;text-align:center;font-weight:600;color:var(--muted);margin-bottom:20px}
+.track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite}
+.partner{min-width:160px;height:56px;border:1px dashed var(--line);border-radius:10px;display:grid;place-items:center;color:var(--muted);font-size:.85rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* Why */
+.why{padding:88px 0}
+.why-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.video{aspect-ratio:16/10;background:var(--green);border-radius:var(--radius);display:grid;place-items:center;position:relative;overflow:hidden}
+.video button{width:72px;height:72px;border-radius:50%;border:0;background:#fff;color:var(--green);font-size:1.6rem;cursor:pointer}
+.why p{color:var(--muted);margin:16px 0 28px}
+
+/* SDGs */
+.sdg{background:var(--mint);padding:88px 0}
+.sdg .intro{max-width:680px;color:var(--muted);margin:14px 0 36px}
+.slider{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:none}
+.slider::-webkit-scrollbar{display:none}
+.card{flex:0 0 min(320px,82%);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.card .thumb{height:150px;background:var(--leaf);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1.6rem}
+.card .body{padding:22px}
+.card h3{font-size:1.05rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.92rem}
+.arrows{display:flex;gap:12px;margin-top:24px}
+.arrows button{width:46px;height:46px;border-radius:50%;border:1px solid var(--green);background:#fff;color:var(--green);font-size:1.2rem;cursor:pointer}
+.arrows button:hover{background:var(--green);color:#fff}
+
+/* Footer */
+footer{background:var(--green);color:#fff;padding:72px 0 32px}
+footer h2{color:#fff;margin-bottom:12px}
+.flags{font-size:1.6rem;margin-bottom:40px;letter-spacing:6px}
+.cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;border-top:1px solid rgba(255,255,255,.2);padding-top:32px}
+.cols h4{margin-bottom:12px}
+.cols ul{list-style:none}
+.cols li{margin-bottom:8px;opacity:.9}
+.cols a:hover{opacity:.7}
+.social{display:flex;gap:14px}
+.social a{width:40px;height:40px;border:1px solid rgba(255,255,255,.4);border-radius:50%;display:grid;place-items:center;font-size:.8rem}
+.copy{margin-top:40px;font-size:.85rem;opacity:.7}
+
+@media (max-width:820px){
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:24px;gap:18px;border-bottom:1px solid var(--line)}
+  .menu.open{display:flex}
+  .pillars,.why-grid{grid-template-columns:1fr}
+  .hero{padding:64px 0 48px}
+}
+@media (prefers-reduced-motion:reduce){.track{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">SheCycled</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <ul class="menu" id="menu">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="tech.html">Tech + Product</a></li>
+      <li><a href="impact.html">Our Impact</a></li>
+      <li><a class="btn" href="#why">Learn More</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero + three pillars -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>The SheCycled Way</h1>
+      <p class="lead">We combine climate education in schools with research on turning agricultural waste into sanitary pads, so learning and dignity grow together for young people, women and girls in northern Nigeria.</p>
+      <div class="pillars">
+        <article class="pillar"><div class="icon" aria-hidden="true">&#9881;</div><h3>Climate education</h3><p>We teach students about climate change and waste management in schools in Jos and Adamawa State, so they can act in their own communities.</p></article>
+        <article class="pillar"><div class="icon" aria-hidden="true">&#127807;</div><h3>Waste to sanitary pads</h3><p>Our completed research, funded by Genetti Eco, explored how agricultural waste can be turned into sanitary pads.</p></article>
+        <article class="pillar"><div class="icon" aria-hidden="true">&#9728;</div><h3>Menstrual health</h3><p>We train women and girls in menstrual health and hygiene management and give out pads after each session.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners strip. Only list partners you actually have. -->
+  <section class="partners" aria-label="Research partner"><small>RESEARCH PARTNER</small><p style="text-align:center;font-weight:600;color:var(--green)">Genetti Eco, Lana, Italy</p></section>
+
+  <!-- Why we are building -->
+  <section class="why" id="why">
+    <div class="wrap why-grid">
+      <div class="video" role="img" aria-label="Photo placeholder"><span style="color:#fff;padding:24px;text-align:center">Add a photo from one of your sessions with girls or students</span></div>
+      <div>
+        <h2>Why we&rsquo;re building SheCycled</h2>
+        <p>SheCycled started in 2024 in northern Nigeria, where insecurity has pushed many families into IDP camps. Women and girls there need safe menstrual products, and agricultural waste is available to make them. We teach climate education in schools and are working to turn that waste into sanitary pads.</p>
+        <a class="btn" href="impact.html">See our impact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core SDGs slider -->
+  <section class="sdg">
+    <div class="wrap">
+      <h2>Our core SDGs</h2>
+      <p class="intro">Our work supports five UN Sustainable Development Goals. Here is how.</p>
+      <div class="slider" id="slider">
+        <article class="card"><div class="thumb">SDG 4</div><div class="body"><h3>Climate education in schools</h3><p>Our climate education has reached 3,000 students across schools in Jos and Adamawa State.</p></div></article>
+        <article class="card"><div class="thumb">SDG 3</div><div class="body"><h3>Menstrual health training</h3><p>We have distributed over 2,000 sanitary pads to girls while teaching them menstrual health.</p></div></article>
+        <article class="card"><div class="thumb">SDG 5</div><div class="body"><h3>Dignity for women and girls</h3><p>We are working to give women and girls in IDP camps safe pads and the knowledge to manage their health.</p></div></article>
+        <article class="card"><div class="thumb">SDG 12</div><div class="body"><h3>Waste into a useful product</h3><p>We are turning agricultural waste into sanitary pads instead of letting it go unused.</p></div></article>
+        <article class="card"><div class="thumb">SDG 13</div><div class="body"><h3>Climate action from the classroom</h3><p>Students learn practical waste management and climate action they can apply at home.</p></div></article>
+      </div>
+      <div class="arrows">
+        <button id="prev" aria-label="Previous">&#8592;</button>
+        <button id="next" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Turning waste into dignity.</h2>
+    <div class="flags" aria-label="Countries of operation">&#127475;&#127468;</div>
+    <div class="cols">
+      <div><h4>Company</h4>
+        <ul>
+          <li><a href="about.html">Contact</a></li>
+          <li><a href="#">Get involved</a></li>
+          <li><a href="tech.html">Projects</a></li>
+          <li><a href="impact.html">Our Impact</a></li>
+        </ul>
+      </div>
+      <div class="social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Facebook">f</a>
+      </div>
+    </div>
+    <p class="copy">&copy; 2026 SheCycled</p>
+  </div>
+</footer>
+
+<script>
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open);
+  });
+  var slider=document.getElementById('slider');
+  function step(dir){slider.scrollBy({left:dir*344,behavior:'smooth'});}
+  document.getElementById('next').addEventListener('click',function(){step(1)});
+  document.getElementById('prev').addEventListener('click',function(){step(-1)});
+</script>
+</body>
+</html>
